@@ -1,0 +1,20 @@
+[
+  {
+    "code": "content_react.search_response_malformed",
+    "package": "@arki/content-react",
+    "kind": "failure",
+    "what": "The route answered, but the body is not JSON or not a list of post overviews. The cause holds the parse failure.",
+    "fix": null,
+    "verify": null,
+    "source": "src/lib/search-posts.ts:15"
+  },
+  {
+    "code": "content_react.search_unavailable",
+    "package": "@arki/content-react",
+    "kind": "failure",
+    "what": "The search request did not complete: the network failed, or the route answered with a non-ok status. The cause holds the error or the status.",
+    "fix": null,
+    "verify": null,
+    "source": "src/lib/search-posts.ts:8"
+  }
+]

@@ -1,0 +1,228 @@
+{
+  "package": "@arki/content-react",
+  "version": "0.2.0",
+  "entries": [
+    {
+      "subpath": ".",
+      "name": "Article",
+      "kind": "function",
+      "signature": "export declare function Article({ post }: { post: ArticlePost; }): import(\"react\").JSX.Element;",
+      "jsdocSummary": ""
+    },
+    {
+      "subpath": ".",
+      "name": "ArticlePost",
+      "kind": "type",
+      "signature": "export type ArticlePost = { title: string; image: { url: string; }; author: { name: string; url?: string | undefined; avatar?: string | undefined; }; publishedAt: Date; readingTime: string; tags: readonly string[]; content: { mdx: string; }; };",
+      "jsdocSummary": "What an article reads from a post. A content-build `Post` has these fields."
+    },
+    {
+      "subpath": ".",
+      "name": "ChangelogCard",
+      "kind": "function",
+      "signature": "export declare function ChangelogCard({ post }: { post: Omit<ChangelogEntry, 'slug'>; }): import(\"react\").JSX.Element;",
+      "jsdocSummary": ""
+    },
+    {
+      "subpath": ".",
+      "name": "ChangelogEntry",
+      "kind": "type",
+      "signature": "export type ChangelogEntry = { slug: string; title: string; publishedAt: Date; image: { url: string; blurDataURL?: string | undefined; }; content: { mdx: string; }; };",
+      "jsdocSummary": "What the changelog components read from each entry. A content-build `Changelog` has these fields."
+    },
+    {
+      "subpath": ".",
+      "name": "ChangelogPagination",
+      "kind": "function",
+      "signature": "export declare function ChangelogPagination({ prev, next, }: { prev?: ChangelogLink | undefined; next?: ChangelogLink | undefined; }): import(\"react\").JSX.Element;",
+      "jsdocSummary": ""
+    },
+    {
+      "subpath": ".",
+      "name": "ChangelogTimeline",
+      "kind": "function",
+      "signature": "export declare function ChangelogTimeline({ posts, Link, searchParams, appTitle, }: { posts: readonly ChangelogEntry[]; Link: LinkComponent; searchParams: Record<string, string | string[] | undefined>; appTitle: string; }): import(\"react\").JSX.Element;",
+      "jsdocSummary": ""
+    },
+    {
+      "subpath": ".",
+      "name": "ContentSection",
+      "kind": "variable",
+      "signature": "export declare const ContentSection: ({ children, className }: Props) => import(\"react\").JSX.Element;",
+      "jsdocSummary": ""
+    },
+    {
+      "subpath": ".",
+      "name": "DateTime",
+      "kind": "variable",
+      "signature": "declare const DateTime: ({ title, value, className }: Props) => import(\"react\").JSX.Element;",
+      "jsdocSummary": ""
+    },
+    {
+      "subpath": ".",
+      "name": "EmbeddedCard",
+      "kind": "function",
+      "signature": "declare function EmbeddedCard({ href, className, children }: Props): import(\"react\").JSX.Element; ; declare namespace EmbeddedCard { export { Title }; export { Author }; }",
+      "jsdocSummary": ""
+    },
+    {
+      "subpath": ".",
+      "name": "FileTree",
+      "kind": "variable",
+      "signature": "export declare const FileTree: ({ nodes, className }: FileTreeProps) => import(\"react\").JSX.Element;",
+      "jsdocSummary": ""
+    },
+    {
+      "subpath": ".",
+      "name": "FileTreeProps",
+      "kind": "type",
+      "signature": "export type FileTreeProps = { nodes: TreeNode[]; className?: string; };",
+      "jsdocSummary": ""
+    },
+    {
+      "subpath": ".",
+      "name": "GitHubIssue",
+      "kind": "variable",
+      "signature": "export declare const GitHubIssue: ({ repository, issue }: IssueProps) => import(\"react\").JSX.Element;",
+      "jsdocSummary": ""
+    },
+    {
+      "subpath": ".",
+      "name": "GitHubItem",
+      "kind": "type",
+      "signature": "export type GitHubItem = { number: number; url: string; titleHTML: string; createdAt: string; author: { login: string; avatarUrl: string; url: string; }; };",
+      "jsdocSummary": "An issue or pull request as the card shows it. `@arki/content-build` writes these props into the compiled MDX from the embed snapshot (`src/content/.embeds/`), so the fields match its snapshot schema."
+    },
+    {
+      "subpath": ".",
+      "name": "GitHubPullRequest",
+      "kind": "variable",
+      "signature": "export declare const GitHubPullRequest: ({ pullRequest, repository }: PullRequestProps) => import(\"react\").JSX.Element;",
+      "jsdocSummary": ""
+    },
+    {
+      "subpath": ".",
+      "name": "ITEMS_PER_PAGE",
+      "kind": "variable",
+      "signature": "export declare const ITEMS_PER_PAGE = 10;",
+      "jsdocSummary": ""
+    },
+    {
+      "subpath": ".",
+      "name": "MarkdownImage",
+      "kind": "variable",
+      "signature": "declare const MarkdownImage: ({ src, alt, width, height }: Props) => import(\"react\").JSX.Element | null;",
+      "jsdocSummary": ""
+    },
+    {
+      "subpath": ".",
+      "name": "Mdx",
+      "kind": "function",
+      "signature": "export declare function Mdx({ code, className }: MdxProps): import(\"react\").JSX.Element;",
+      "jsdocSummary": ""
+    },
+    {
+      "subpath": ".",
+      "name": "mdxComponents",
+      "kind": "variable",
+      "signature": "export declare const components: { a: ({ href, children, ...props }: AnchorHTMLAttributes<HTMLAnchorElement>) => import(\"react\").JSX.Element; Tweet: (props: TweetProps) => import(\"react\").JSX.Element; Image: ({ alt, ...props }: ImgHTMLAttributes<HTMLImageElement>) => import(\"react\").JSX.Element; img: typeof MarkdownImage; Callout: (props: CalloutProps) => import(\"react\").JSX.Element; Notification: typeof Notification; GitHubIssue: typeof GitHubIssue; GitHubPullRequest: typeof GitHubPullRequest; StaticTweet: typeof StaticTweet; FileTree: (props: FileTreeProps) => import(\"react\").JSX.Element; table: (props: HTMLAttributes<HTMLTableElement>) => import(\"react\").JSX.Element; thead: (props: HTMLAttributes<HTMLTableSectionElement>) => import(\"react\").JSX.Element; tbody: (props: HTMLAttributes<HTMLTableSectionElement>) => import(\"react\").JSX.Element; tfoot: (props: HTMLAttributes<HTMLTableSectionElement>) => import(\"react\").JSX.Element; tr: (props: HTMLAttributes<HTMLTableRowElement>) => import(\"react\").JSX.Element; th: (props: ThHTMLAttributes<HTMLTableCellElement>) => import(\"react\").JSX.Element; td: (props: TdHTMLAttributes<HTMLTableCellElement>) => import(\"react\").JSX.Element; pre: (props: HTMLAttributes<HTMLPreElement>) => import(\"react\").JSX.Element; h1: { ({ id, children }: HeadingProps): import(\"react\").JSX.Element; displayName: \"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\"; }; h2: { ({ id, children }: HeadingProps): import(\"react\").JSX.Element; displayName: \"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\"; }; h3: { ({ id, children }: HeadingProps): import(\"react\").JSX.Element; displayName: \"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\"; }; h4: { ({ id, children }: HeadingProps): import(\"react\").JSX.Element; displayName: \"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\"; }; h5: { ({ id, children }: HeadingProps): import(\"react\").JSX.Element; displayName: \"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\"; }; h6: { ({ id, children }: HeadingProps): import(\"react\").JSX.Element; displayName: \"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\"; }; };",
+      "jsdocSummary": ""
+    },
+    {
+      "subpath": ".",
+      "name": "Notification",
+      "kind": "variable",
+      "signature": "export declare const Notification: ({ title, children, type, prose }: Props) => import(\"react\").JSX.Element;",
+      "jsdocSummary": ""
+    },
+    {
+      "subpath": ".",
+      "name": "PostsTimeline",
+      "kind": "variable",
+      "signature": "export declare const PostsTimeline: ({ appTitle, posts, searchParams, Link, }: { appTitle: string; posts: readonly TimelinePost[]; searchParams: Record<'p', string | string[] | undefined>; Link: LinkComponent; }) => import(\"react\").JSX.Element;",
+      "jsdocSummary": ""
+    },
+    {
+      "subpath": ".",
+      "name": "Pre",
+      "kind": "function",
+      "signature": "export default function Pre({ children, className, ...props }: PreProps): React.JSX.Element;",
+      "jsdocSummary": ""
+    },
+    {
+      "subpath": ".",
+      "name": "Preview",
+      "kind": "function",
+      "signature": "export declare function Preview({ md }: Props): import(\"react\").JSX.Element;",
+      "jsdocSummary": ""
+    },
+    {
+      "subpath": ".",
+      "name": "Repository",
+      "kind": "type",
+      "signature": "export type Repository = { owner: string; name: string; };",
+      "jsdocSummary": ""
+    },
+    {
+      "subpath": ".",
+      "name": "searchParamsCache",
+      "kind": "variable",
+      "signature": "export declare const searchParamsCache: { parse: { (searchParams: import(\"nuqs/server\").SearchParams, loaderOptions?: { strict?: boolean; }): { p: number; }; (searchParams: Promise<any>, loaderOptions?: { strict?: boolean; }): Promise<{ p: number; }>; }; all: () => { p: number; }; get: <Key extends \"p\">(key: Key) => import(\"nuqs/server\").inferParserType<{ p: Omit<import(\"nuqs/server\").SingleParserBuilder<number>, \"parseServerSide\"> & { readonly defaultValue: number; parseServerSide(value: string | string[] | undefined): number; }; }[Key]>; };",
+      "jsdocSummary": ""
+    },
+    {
+      "subpath": ".",
+      "name": "searchParamsParsers",
+      "kind": "variable",
+      "signature": "export declare const searchParamsParsers: { p: Omit<import(\"nuqs/server\").SingleParserBuilder<number>, \"parseServerSide\"> & { readonly defaultValue: number; parseServerSide(value: string | string[] | undefined): number; }; };",
+      "jsdocSummary": ""
+    },
+    {
+      "subpath": ".",
+      "name": "StaticTweet",
+      "kind": "variable",
+      "signature": "export declare const StaticTweet: ({ tweet }: Props) => import(\"react\").JSX.Element;",
+      "jsdocSummary": ""
+    },
+    {
+      "subpath": ".",
+      "name": "Timeline",
+      "kind": "function",
+      "signature": "export declare function Timeline({ title, description, children, actions }: TimelineProps): import(\"react\").JSX.Element; ; export declare namespace Timeline { export { Article }; }",
+      "jsdocSummary": ""
+    },
+    {
+      "subpath": ".",
+      "name": "TimelinePost",
+      "kind": "type",
+      "signature": "export type TimelinePost = { slug: string; title: string; description: string; publishedAt: Date; image: { url: string; blurDataURL?: string | undefined; }; };",
+      "jsdocSummary": "What the posts timeline reads from each post. A content-build `Post` has these fields."
+    },
+    {
+      "subpath": ".",
+      "name": "Tweet",
+      "kind": "type",
+      "signature": "export type Tweet = { id: string; text: string; createdAt: string; author: { name: string; username: string; profileImageUrl: string; }; url: string; };",
+      "jsdocSummary": "A tweet as the card shows it. `@arki/content-build` writes these props into the compiled MDX from the embed snapshot (`src/content/.embeds/`), so the fields match its `tweetProps`."
+    },
+    {
+      "subpath": ".",
+      "name": "useProcessor",
+      "kind": "function",
+      "signature": "export declare function useProcessor(text: string): import(\"@arki/ui/hooks/async-memo\").AsyncMemo<any>;",
+      "jsdocSummary": "Renders markdown text to React. Returns the content, `isPending`, `failure` (what the pipeline rejected with) and `retry()`."
+    },
+    {
+      "subpath": ".",
+      "name": "useSearch",
+      "kind": "variable",
+      "signature": "declare const useSearch: () => { query: string; result: PostOverview[]; search: import(\"react\").Dispatch<import(\"react\").SetStateAction<string>>; isLoading: boolean; failure: SearchFailure | undefined; retry: () => void; };",
+      "jsdocSummary": "Searches posts through the app's `/posts/search?query=` route as the reader types (debounced 300ms). A newer query aborts the request still in flight."
+    }
+  ],
+  "groups": [],
+  "errorCodes": [
+    "content_react.search_response_malformed",
+    "content_react.search_unavailable"
+  ]
+}
