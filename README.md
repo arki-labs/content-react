@@ -1,4 +1,4 @@
-Read-only mirror of `@arki/content-react` v0.2.0. Source and issues: arki-labs/arki. Docs: https://arki.dev/packages/content-react. Published 2026-11-03 with provenance https://www.npmjs.com/package/@arki/content-react/v/0.2.0#provenance.
+Read-only mirror of `@arki/content-react` v0.3.0. Source and issues: arki-labs/arki. Docs: https://arki.dev/packages/content-react. Published 2026-11-25 with provenance https://www.npmjs.com/package/@arki/content-react/v/0.3.0#provenance.
 
 # @arki/content-react
 
@@ -47,13 +47,6 @@ export function SearchBox() {
 }
 ```
 
-## What it gives you
-
-- `Article`, `Mdx`, `ContentSection`, `Preview`, `mdxComponents` render posts and MDX.
-- `ChangelogTimeline`, `ChangelogPagination`, `ChangelogCard`, `Timeline`, `PostsTimeline` show dated entries. `searchParamsParsers` and `searchParamsCache` hold the `nuqs` page state for the changelog.
-- `Pre`, `FileTree`, `Notification`, `MarkdownImage`, `DateTime`, `EmbeddedCard`, `GitHubIssue`, `GitHubPullRequest`, `StaticTweet` are the building blocks used inside MDX.
-- `useSearch` searches posts with a 300 ms debounce and aborts a request still in flight. `useProcessor` turns markdown text into React nodes.
-
 ## When not to use this
 
 - You do not use `@arki/ui`. These components use its tokens and parts.
@@ -63,6 +56,23 @@ export function SearchBox() {
 ## Runtime support
 
 Browsers and React server rendering, through a bundler. It does not load in plain Node.
+
+<!-- runtimes:start -->
+| Runtime | Result | Version tested | Date (UTC) |
+| --- | --- | --- | --- |
+| node | n/a | - | 2026-11-05 |
+| bun | n/a | - | 2026-11-05 |
+| deno | n/a | - | 2026-11-05 |
+| browser | pass | Chromium 156.0.8078.4 | 2026-11-05 |
+| hermes | n/a | - | 2026-11-05 |
+<!-- runtimes:end -->
+
+## What it gives you
+
+- `Article`, `Mdx`, `ContentSection`, `Preview`, `mdxComponents` render posts and MDX.
+- `ChangelogTimeline`, `ChangelogPagination`, `ChangelogCard`, `Timeline`, `PostsTimeline` show dated entries. `searchParamsParsers` and `searchParamsCache` hold the `nuqs` page state for the changelog.
+- `Pre`, `FileTree`, `Notification`, `MarkdownImage`, `DateTime`, `EmbeddedCard`, `GitHubIssue`, `GitHubPullRequest`, `StaticTweet` are the building blocks used inside MDX.
+- `useSearch` searches posts with a 300 ms debounce and aborts a request still in flight. `useProcessor` turns markdown text into React nodes.
 
 ## Public imports
 
@@ -74,6 +84,20 @@ Browsers and React server rendering, through a bundler. It does not load in plai
 
 `useSearch` returns failures instead of throwing: `SearchUnavailable` for a network error or non-ok response, `SearchResponseMalformed` for a body that is not a list of posts. `result` is empty then. `Preview` shows a retry button when markdown fails to render.
 
+## Observability
+
+Renders in the app's own process. Its only I/O is the browser `fetch` in `searchPosts` to the app's own `/posts/search` route; the package adds no span, and the route's server-side HTTP spans from the app's server cover the request.
+
 ## Limits
 
 `useSearch` needs a `/posts/search` route that returns a JSON list of posts.
+
+## Documentation
+
+- [Agent guide](docs/agent-guide.md): the model, the task map, the rules that bite, the errors and how to verify.
+- [`llms.txt`](llms.txt): the short map an agent reads first.
+- [`AGENTS.md`](AGENTS.md): the laws for changing this package.
+
+## Support
+
+Questions and bugs: <https://github.com/arki-labs/arki/issues>. Include the package version and the failure `code`.

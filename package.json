@@ -1,6 +1,6 @@
 {
   "name": "@arki/content-react",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "React components for content: MDX renderer, article, changelog and timeline views, code blocks, GitHub and tweet embeds, and a post search hook.",
   "license": "MIT",
   "repository": {
@@ -39,19 +39,20 @@
     "!src/**/test/**",
     "!src/**/__tests__/**",
     "README.md",
+    "docs/**",
     "llms.txt",
     "LICENSE",
     "package.json"
   ],
   "dependencies": {
-    "@arki/content": "0.2.0",
-    "@arki/date": "0.5.0",
-    "@arki/failure": "0.3.0",
-    "@arki/icons": "0.2.0",
-    "@arki/intl": "0.2.0",
-    "@arki/math": "0.2.0",
-    "@arki/schema": "0.3.0",
-    "@arki/ui": "0.2.0",
+    "@arki/content": "0.2.1",
+    "@arki/date": "0.5.2",
+    "@arki/failure": "0.4.0",
+    "@arki/icons": "0.2.1",
+    "@arki/intl": "0.3.0",
+    "@arki/math": "0.2.1",
+    "@arki/schema": "0.3.1",
+    "@arki/ui": "0.2.1",
     "@content-collections/mdx": "0.2.2",
     "nuqs": "2.10.1",
     "react-tweet": "^3.3.1",
@@ -69,6 +70,9 @@
     "access": "public"
   },
   "arki": {
+    "runtimes": [
+      "browser"
+    ],
     "bundlerOnly": [
       "."
     ]
